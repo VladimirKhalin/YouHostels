@@ -7,19 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		12462BCB293E022600150771 /* Hostels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12462BCA293E022600150771 /* Hostels.swift */; };
 		128FD5D92939EE83008032DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128FD5D82939EE83008032DD /* AppDelegate.swift */; };
 		128FD5DB2939EE83008032DD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128FD5DA2939EE83008032DD /* SceneDelegate.swift */; };
-		128FD5DD2939EE83008032DD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128FD5DC2939EE83008032DD /* ViewController.swift */; };
+		128FD5DD2939EE83008032DD /* WlcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128FD5DC2939EE83008032DD /* WlcomeViewController.swift */; };
 		128FD5E02939EE83008032DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 128FD5DE2939EE83008032DD /* Main.storyboard */; };
 		128FD5E22939EE85008032DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 128FD5E12939EE85008032DD /* Assets.xcassets */; };
 		128FD5E52939EE85008032DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 128FD5E32939EE85008032DD /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		12462BCA293E022600150771 /* Hostels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hostels.swift; sourceTree = "<group>"; };
 		128FD5D52939EE83008032DD /* YouHostels.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YouHostels.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		128FD5D82939EE83008032DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		128FD5DA2939EE83008032DD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		128FD5DC2939EE83008032DD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		128FD5DC2939EE83008032DD /* WlcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WlcomeViewController.swift; sourceTree = "<group>"; };
 		128FD5DF2939EE83008032DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		128FD5E12939EE85008032DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		128FD5E42939EE85008032DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -37,6 +39,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		12462BC9293E01F600150771 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				12462BCA293E022600150771 /* Hostels.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		128FD5CC2939EE83008032DD = {
 			isa = PBXGroup;
 			children = (
@@ -56,9 +66,10 @@
 		128FD5D72939EE83008032DD /* YouHostels */ = {
 			isa = PBXGroup;
 			children = (
+				12462BC9293E01F600150771 /* Models */,
 				128FD5D82939EE83008032DD /* AppDelegate.swift */,
 				128FD5DA2939EE83008032DD /* SceneDelegate.swift */,
-				128FD5DC2939EE83008032DD /* ViewController.swift */,
+				128FD5DC2939EE83008032DD /* WlcomeViewController.swift */,
 				128FD5DE2939EE83008032DD /* Main.storyboard */,
 				128FD5E12939EE85008032DD /* Assets.xcassets */,
 				128FD5E32939EE85008032DD /* LaunchScreen.storyboard */,
@@ -138,8 +149,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				128FD5DD2939EE83008032DD /* ViewController.swift in Sources */,
+				128FD5DD2939EE83008032DD /* WlcomeViewController.swift in Sources */,
 				128FD5D92939EE83008032DD /* AppDelegate.swift in Sources */,
+				12462BCB293E022600150771 /* Hostels.swift in Sources */,
 				128FD5DB2939EE83008032DD /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
