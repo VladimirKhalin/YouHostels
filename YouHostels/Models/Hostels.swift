@@ -25,7 +25,7 @@ struct Hostel {
     let hostelName: String
     let rating: Double
     let fidbacks: Int
-    let cityCenter: Int
+    let cityCenter: Double
     let photos: [String]
     let saleImage: String
     let saleBool: Bool
@@ -36,8 +36,16 @@ struct Hostel {
 }
 
 let hostels = [
-    Hostel(sityName: "Москва", hostelName: "Есенин", rating: 4.6, fidbacks: 257, cityCenter: 4100, photos: ["esenin01", "esenin02", "esenin03", "esenin04"], saleImage: "sale", saleBool: false, noVacancyImage: "noVacancy", noVacancyBool: false, price: 2380, info: "«Хостел Есенин» расположен в Москве. Этот хостел находится в 4 км от центра города. Рядом с хостелом можно прогуляться. Неподалёку: Красносельская, Сад им. Баумана и Дом культуры им. Русакова."),
-    Hostel(sityName: "Москва", hostelName: "", rating: <#T##Double#>, fidbacks: <#T##Int#>, cityCenter: <#T##Int#>, photos: <#T##[String]#>, saleImage: <#T##String#>, saleBool: <#T##Bool#>, noVacancyImage: <#T##String#>, noVacancyBool: <#T##Bool#>, price: <#T##Int#>, info: <#T##String#>)
-
+    //Москва
+    Hostel(sityName: "Москва", hostelName: "Есенин", rating: 8.8, fidbacks: 257, cityCenter: 4.1, photos: ["esenin01", "esenin02", "esenin03", "esenin04"], saleImage: "sale", saleBool: false, noVacancyImage: "noVacancy", noVacancyBool: false, price: 2380, info: "«Хостел Есенин» расположен в Москве. Этот хостел находится в 4 км от центра города. Рядом с хостелом можно прогуляться. Неподалёку: Красносельская, Сад им. Баумана и Дом культуры им. Русакова."),
+    Hostel(sityName: "Москва", hostelName: "Icon Hostel", rating: 8.6, fidbacks: 130, cityCenter: 5, photos: ["icon01", "icon02", "icon03", "icon04"], saleImage: "sale", saleBool: false, noVacancyImage: "noVacancy", noVacancyBool: false, price: 4500, info: "«Хостел Icon» находится в Москве. Этот хостел располагается В 5 км от центра города. Рядом с хостелом — Деловой центр (Солнцевская), Москва-Сити и Музей-панорама «Бородинская битва»."),
+    Hostel(sityName: "Москва", hostelName: "Круассан", rating: 7.2, fidbacks: 218, cityCenter: 2, photos: ["kruassan01", "kruassan02", "kruassan03", "kruassan04"], saleImage: "sale", saleBool: false, noVacancyImage: "noVacancy", noVacancyBool: false, price: 993, info: "Хостел «Круассан на Павелецкой» находится в Москве. Этот хостел располагается в 2 км от центра города. Неподалёку: Таганская (Таганско-Краснопресненская), Театр на Таганке и Государственная Третьяковская галерея."),
+    Hostel(sityName: "Москва", hostelName: "Qube Capsule", rating: 8.7, fidbacks: 225, cityCenter: 3, photos: ["qubeCapsule01", "qubeCapsule02", "qubeCapsule03", "qubeCapsule04"], saleImage: "sale", saleBool: false, noVacancyImage: "noVacancy", noVacancyBool: false, price: 1182, info: "Капсульный Отель Qube расположен в 3 км от центра города Москва."),
+    Hostel(sityName: "Москва", hostelName: "Рус Авиатор", rating: 7.9, fidbacks: 78, cityCenter: 4, photos: ["rusaviator01", "rusaviator02", "rusaviator03", "rusaviator04"], saleImage: "sale", saleBool: false, noVacancyImage: "noVacancy", noVacancyBool: false, price: 1055, info: "«Хостел Рус Авиатор» находится в Москве. Этот хостел располагается В 4 км от центра города. Рядом с хостелом можно прогуляться. Неподалёку: Красносельская, Сад им. Баумана и Большой театр."),
+    // Санкт-Петербург
+    Hostel(sityName: "Санкт-Петербург", hostelName: "Roof Capsules", rating: 7.3, fidbacks: 151, cityCenter: 0.5, photos: ["roofcapsul01", "roofcapsul02", "roofcapsul03", "roofcapsul04"], saleImage: "sale", saleBool: false, noVacancyImage: "noVacancy", noVacancyBool: false, price: 890, info: "«Хостел Рус Авиатор» находится в Москве. Этот хостел располагается В 4 км от центра города. Рядом с хостелом можно прогуляться. Неподалёку: Красносельская, Сад им. Баумана и Большой театр.")
+    
+    
+    
 ]
 
