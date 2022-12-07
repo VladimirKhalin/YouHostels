@@ -13,16 +13,7 @@ class HostelListTableViewCell: UITableViewCell {
     @IBOutlet var hostelRating: UILabel!
     @IBOutlet var cityCenterRage: UILabel!
     @IBOutlet var price: UILabel!
+    @IBOutlet var likeButton: UIButton!
     
-//    override func awakeFromNib() {
-//        super.awakeFromNib()
-//        // Initialization code
-//    }
-//
-//    override func setSelected(_ selected: Bool, animated: Bool) {
-//        super.setSelected(selected, animated: animated)
-//
-//        // Configure the view for the selected state
-//    }
-
+    
 }

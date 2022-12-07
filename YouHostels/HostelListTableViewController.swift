@@ -17,6 +17,7 @@ final class HostelListTableViewController: UITableViewController {
     var dateOut = ""
     var guests: Int!
     var guestString = false
+    var buttonLikeTag: Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,7 +48,7 @@ final class HostelListTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
+        
         let cell = tableView.dequeueReusableCell(
             withIdentifier: "hostelCell", for: indexPath) as! HostelListTableViewCell
         let currentHostel = hostelsList[indexPath.row]
@@ -76,7 +77,18 @@ final class HostelListTableViewController: UITableViewController {
             let noVacancy = noVacancy()
             cell.contentView.addSubview(noVacancy)
         }
+        cell.likeButton.tintColor = currentHostel.likeButton ? .systemRed : .systemGray
+        cell.likeButton.setImage(UIImage(systemName: currentHostel.likeButton ? "heart.fill" : "heart"), for: .normal)
+        cell.likeButton.addTarget(self, action: #selector(addToFavorite), for: .touchUpInside)
+        cell.likeButton.tag = indexPath.row
         return cell
+    }
+    
+    @objc private func addToFavorite(_ sender: UIButton) {
+        hostelsList[sender.tag].likeButton.toggle()
+        //sender.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+        sender.setImage(UIImage(systemName: hostelsList[sender.tag].likeButton ? "heart.fill" : "heart"), for: .normal)
+        sender.tintColor = hostelsList[sender.tag].likeButton ? .systemRed : .systemGray
     }
     
     // Метод добавляет лэйбл "Скидка"
