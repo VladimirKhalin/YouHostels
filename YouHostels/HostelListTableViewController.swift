@@ -86,7 +86,6 @@ final class HostelListTableViewController: UITableViewController {
     
     @objc private func addToFavorite(_ sender: UIButton) {
         hostelsList[sender.tag].likeButton.toggle()
-        //sender.setImage(UIImage(systemName: "heart.fill"), for: .normal)
         sender.setImage(UIImage(systemName: hostelsList[sender.tag].likeButton ? "heart.fill" : "heart"), for: .normal)
         sender.tintColor = hostelsList[sender.tag].likeButton ? .systemRed : .systemGray
     }
@@ -119,11 +118,9 @@ final class HostelListTableViewController: UITableViewController {
     
     
     // MARK: - Navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
-    }
-    
-
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//
+//    }
 }
 // :MARK - Alert Message
 extension HostelListTableViewController {

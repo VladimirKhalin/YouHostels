@@ -88,13 +88,9 @@ final class WlcomeViewController: UIViewController {
     }
     
     @IBAction func unwind(for segue: UIStoryboardSegue) {
-        //guard let hhh = segue.source as? UINavigationController else { return }
         hostelsList = []
     }
-    
-    
-    
-    
+
     private func dateSave() {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .long
