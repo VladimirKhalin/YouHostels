@@ -36,16 +36,30 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="TcX-7K-HQK">
-                                <rect key="frame" x="20" y="288.5" width="374" height="287.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="TcX-7K-HQK">
+                                <rect key="frame" x="20" y="288.5" width="374" height="263.5"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Москва" borderStyle="roundedRect" placeholder="Выберите город" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cIF-RC-gVL">
+                                    <textField opaque="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Москва" borderStyle="roundedRect" placeholder="Выберите город" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cIF-RC-gVL">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" returnKeyType="done" textContentType="address-level2"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="44D-hl-AUa"/>
+                                        </connections>
                                     </textField>
+                                    <pickerView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="edz-Hy-VkF">
+                                        <rect key="frame" x="0.0" y="34" width="374" height="120"/>
+                                        <rect key="contentStretch" x="0.0" y="0.0" width="0.20000000000000001" height="0.050000000000000003"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="120" id="Jq6-IN-E4k"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="dataSource" destination="BYZ-38-t0r" id="y3y-Hc-slo"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="qAa-Vb-CQ8"/>
+                                        </connections>
+                                    </pickerView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="dEu-Ju-bIE">
-                                        <rect key="frame" x="0.0" y="60" width="374" height="50"/>
+                                        <rect key="frame" x="0.0" y="54" width="374" height="50"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="C" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D1t-Iq-HuV">
                                                 <rect key="frame" x="0.0" y="0.0" width="12.5" height="50"/>
@@ -74,7 +88,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="GCI-4C-fhO">
-                                        <rect key="frame" x="0.0" y="136" width="374" height="34"/>
+                                        <rect key="frame" x="0.0" y="124" width="374" height="34"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Количество гостей" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bCr-RV-sZy">
                                                 <rect key="frame" x="0.0" y="0.0" width="184" height="34"/>
@@ -118,14 +132,14 @@
                                         </subviews>
                                     </stackView>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="b0F-0p-vzV">
-                                        <rect key="frame" x="0.0" y="196" width="374" height="32"/>
+                                        <rect key="frame" x="0.0" y="178" width="374" height="32"/>
                                         <segments>
                                             <segment title="Женская комната"/>
                                             <segment title="Мужская комната"/>
                                         </segments>
                                     </segmentedControl>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Peg-pu-fyb">
-                                        <rect key="frame" x="0.0" y="253" width="374" height="34.5"/>
+                                        <rect key="frame" x="0.0" y="229" width="374" height="34.5"/>
                                         <color key="backgroundColor" systemColor="linkColor"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="ПОИСК">
@@ -136,6 +150,9 @@
                                         </connections>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="edz-Hy-VkF" firstAttribute="top" secondItem="cIF-RC-gVL" secondAttribute="bottom" id="CQr-8T-sBv"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -153,6 +170,7 @@
                         <outlet property="cityName" destination="cIF-RC-gVL" id="ZA3-jT-L0H"/>
                         <outlet property="dateEndPicker" destination="4XU-ia-0G1" id="jEZ-cy-Nwg"/>
                         <outlet property="dateFromPicker" destination="5FK-5y-0lL" id="Rgh-T0-lbr"/>
+                        <outlet property="dropDown" destination="edz-Hy-VkF" id="TXm-Xo-Zgp"/>
                         <outlet property="guestCount" destination="UGx-g7-Me6" id="v6H-a8-RQg"/>
                         <segue destination="Zjn-cR-Ybl" kind="presentation" identifier="nextView" modalPresentationStyle="fullScreen" id="NpD-Ue-4P6"/>
                     </connections>
@@ -176,13 +194,13 @@
                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="LDg-S9-ift">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="34"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Дата заезда: Вт, 5.12.22 " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1hX-qd-6i3">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Дата заезда:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1hX-qd-6i3">
                                             <rect key="frame" x="0.0" y="0.0" width="205.5" height="34"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Дата выезда Ср, 6.12.22" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d79-Hc-Ukl">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Дата выезда:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d79-Hc-Ukl">
                                             <rect key="frame" x="208.5" y="0.0" width="205.5" height="34"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <nil key="textColor"/>
@@ -320,7 +338,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Регион поиска: Москва" id="Qfb-Eq-Otu">
-                        <barButtonItem key="leftBarButtonItem" title="Изменить " image="chevron.backward" catalog="system" id="Kef-4Q-GFF"/>
+                        <barButtonItem key="leftBarButtonItem" title="Изменить " image="chevron.backward" catalog="system" id="Kef-4Q-GFF">
+                            <connections>
+                                <segue destination="bYD-wg-Vx5" kind="unwind" unwindAction="unwindFor:" id="jqh-DY-NV9"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="dateInHostel" destination="1hX-qd-6i3" id="uMf-Cn-lSL"/>
@@ -328,6 +350,7 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R4R-LM-C3t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="bYD-wg-Vx5" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1723" y="-2"/>
         </scene>

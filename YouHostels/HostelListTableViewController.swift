@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HostelListTableViewController: UITableViewController {
+final class HostelListTableViewController: UITableViewController {
 
     @IBOutlet var dateInHostel: UILabel!
     @IBOutlet var dateOutHostel: UILabel!
@@ -20,10 +20,13 @@ class HostelListTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        self.title = sityNameTitle()
         dateInHostel.text = ("Заезд: \(dateIn)")
         dateOutHostel.text = ("Выезд: \(dateOut)")
-        if guests < 5 { guestString = true }
+        if guests < 5 {
+            guestString = true
+        }
     }
 
     @IBAction func toolsButtonPresed(_ sender: UIButton) {
@@ -45,9 +48,12 @@ class HostelListTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        let cell = tableView.dequeueReusableCell(withIdentifier: "hostelCell", for: indexPath) as! HostelListTableViewCell
+        let cell = tableView.dequeueReusableCell(
+            withIdentifier: "hostelCell", for: indexPath) as! HostelListTableViewCell
         let currentHostel = hostelsList[indexPath.row]
-        cell.hostelAvatar.image = UIImage(named: currentHostel.photos[0])
+        cell.hostelAvatar.image = UIImage(
+            named: currentHostel.photos.first ?? "YourHostelLogo"
+        )
         
         // Если у хостела есть скидка появится лэйбл "sale"
         if currentHostel.saleBool {
@@ -73,6 +79,7 @@ class HostelListTableViewController: UITableViewController {
         return cell
     }
     
+    // Метод добавляет лэйбл "Скидка"
     private func setSale() -> UIView {
         let imageName = "sale"
         let image = UIImage(named: imageName)
@@ -81,6 +88,7 @@ class HostelListTableViewController: UITableViewController {
         return saleView
     }
     
+    // Метод добавляет лэйбл "Мест нет"
     private func noVacancy() -> UIView {
         let imageName = "noVacancy"
         let image = UIImage(named: imageName)
@@ -88,16 +96,21 @@ class HostelListTableViewController: UITableViewController {
         noVacancyView.frame = CGRect(x: 25, y: 20, width: 120, height: 75)
         return noVacancyView
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    // Метод отображает регион поиска
+    private func sityNameTitle() -> String {
+        guard let sityName = hostelsList.first?.sityName else {
+            return "Хостелы не найдены"
+        }
+        return sityName
     }
-    */
+    
+    
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+    }
+    
 
 }
 // :MARK - Alert Message
